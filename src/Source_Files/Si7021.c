@@ -97,6 +97,20 @@ float tempConvert_si7021(){
  	return temp;
 }
 
+/***************************************************************************//**
+ * @brief
+ *	Test Driven Development Routine for the Si7021 
+ *	
+ * @details
+ *  This TDD routine will test the I2C drivers and the verify the functionality 
+ *  of the Si7021. Specifically, this will test single-byte read/write and double
+ *  byte read from the Si7021. In this test, the output resolution for RH and 
+ *  temperature will be adjusted to 10 and 13 respectively. 
+ *
+ * @note
+ *  The I2C driver should support read/writes of at least 4 bytes (32 bit). 
+ *  
+ * ******************************************************************************/
 void si7021_TDD_config(void){
 	timer_delay(80u); // make sure that the device is booted up off reset
 	/* Perform a single-byte read of the User 1 register on the SI 7021.*/
